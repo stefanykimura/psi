@@ -1,37 +1,9 @@
 
-//Query para selecionar os dado, podendo usar filtro ou não
+//Query para selecionar os dado, podendo usar filtro ou nÃ£o
 //usou o ADO para retornar os dados
 //O retorno incluiu todos o campo das tabelas envolvidas
 
-string queryString = Select pr.codigoproduto, pr.nome, pr.descricao, pr.categoria, pr.atributo1, pr.atributo2, pr.atributo3, pr.atributo4,
-                         ip.codigoitem, pr.nome, pr.descricao, pr.categoria, pr.atributo1, pr.atributo2, pr.atributo3, pr.atributo4
-                    from produto pr
-                    Inner join item_produto ip on ip.codigoproduto = pr.codigoproduto";
-public void Listar(int oCodProduct)
-{
-try {
-using (SqlConnection con = "Data Source=CaixaPSI;Initial Catalog=Vendas;User id=c000000;Password=xpto") {
-try {
-con.Open();
-SqlCommand cmd = new SqlCommand();
-cmd.Connection = con;
-
-
-if(oCodProduct >0)
-{
- queryString += "WHERE pr.codigoproduto> @codigoproduto;
- command.Parameters.AddWithValue("@codigoproduto", oCodProduct);
-}
-
-cmd.CommandText = queryString;
-cmd.ExecuteNonQuery();
-} catch (SqlException ex) {
-throw ex;
-} finally {
-con.Close();
-}
-}
-} catch (Exception ex) {
-throw ex;
-}
-}
+Select pr.codigoproduto, pr.nome, pr.descricao, pr.categoria, pr.atributo1, pr.atributo2, pr.atributo3, pr.atributo4,
+ip.codigoitem, pr.nome, pr.descricao, pr.categoria, pr.atributo1, pr.atributo2, pr.atributo3, pr.atributo4
+from produto pr
+Inner join item_produto ip on ip.codigoproduto = pr.codigoproduto
