@@ -1,5 +1,5 @@
 
-//Query para selecionar os dado, podendo usar filtro ou não
+//Query para selecionar os dados
 //usou o ADO para retornar os dados
 //O retorno incluiu todos o campo das tabelas envolvidas
 
